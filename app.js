@@ -1,19 +1,24 @@
-var express = require('express');
-var app = express();
+var app = require('./config/server');
 
 app.get('/',function(req,res){
-    res.send("<html> <body> Portal IFMS Not&iacutecias</body></html>")
+    res.render('home/index');
 });
 app.get('/cursos',function(req,res){
-    res.send("<html> <body>IFMS Not&iacutecias de Cursos</body></html>");
+    res.render("secao/cursos");
 });
 app.get('/esportes',function(req,res){
-    res.send("<html> <body> IFMS - Not&iacutecias de Esportes</body></html>");
+    res.render("secao/esportes");
 });
 app.get('/pesquisa',function(req,res){
-    res.send("<html> <body> IMFS - Not&iacutecias de Pesquisas</body></html>")
+    res.render("secao/pesquisa");
+});
+app.get('/formulario_inclusao_noticias',function(req,res){
+    res.render("admin/form_add_noticia");
+});
+app.get('/noticias',function(req,res){
+    res.render("noticias/noticias");
 });
 
 app.listen(3000, function(){
-    console.log("servidor rodando com express");
+    console.log('Servidor ON');
 });
