@@ -1,4 +1,4 @@
-//teste sublime
+//teste de git
 var mysql = require('mysql');
 module.exports = function (){
     return mysql.createConnection({
